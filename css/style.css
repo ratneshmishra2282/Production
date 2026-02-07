@@ -1,0 +1,263 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  background: #0b2b4b;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ===============================
+   LOADER
+================================ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #0b2b4b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+}
+
+#loader img {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+#loader p {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   HEADER & NAV
+================================ */
+.header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 10000;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 42px;
+}
+
+/* NAV */
+.navbar {
+  position: relative;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #0b2b4b;
+  font-weight: 500;
+}
+
+.btn {
+  background: #25d366;
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* ===============================
+   MEGA MENU
+================================ */
+.mega {
+  position: relative;
+}
+
+.mega-menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  min-width: 220px;
+  padding: 15px;
+  background: #0f3a63;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.mega:hover .mega-menu {
+  display: flex;
+  background: linear-gradient(135deg, #00e5ff, #1e88e5);
+}
+
+.mega-menu a {
+  color: #ffffff;
+  padding: 6px 0;
+}
+
+/* ===============================
+   HAMBURGER
+================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #282829;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 90px 80px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.hero-images img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ===============================
+   DETAIL SECTION
+================================ */
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 80px;
+  background: #0f3a63;
+}
+
+.detail img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* ===============================
+   GENERIC PAGE SECTIONS
+================================ */
+.page {
+  padding: 80px;
+}
+
+.page h2 {
+  margin-bottom: 20px;
+}
+
+/* SERVICES GRID */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.services div {
+  background: #123f6e;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  padding: 40px;
+  background: #071e34;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 260px;
+    background: #0b2b4b;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu a {
+    color: #ffffff;
+  }
+
+  .mega-menu {
+    display: none !important;
+  }
+
+  .hero,
+  .detail {
+    grid-template-columns: 1fr;
+    padding: 50px 30px;
+  }
+
+  .hero-images {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding: 50px 30px;
+  }
+}
